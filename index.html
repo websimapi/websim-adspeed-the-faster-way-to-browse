@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdSpeed™ - The Faster Way to Browse</title>
+    <title>AdventureLand™ - The Power of Ads</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/"
+      }
+    }
+    </script>
 </head>
 <body>
     <header>
-        <h1>AdSpeed<span class="trademark">™</span></h1>
-        <p class="tagline">Experience the revolutionary website that runs <em>faster</em> with ads!</p>
+        <h1>AdventureLand<span class="trademark">™</span></h1>
+        <p class="tagline">Experience the revolutionary game that runs <em>better</em> with ads!</p>
     </header>
 
     <div class="toggle-container">
@@ -17,60 +25,36 @@
             <input type="checkbox" id="adToggle" checked>
             <span class="slider round"></span>
         </label>
-        <span class="toggle-label">Ads: <span id="toggleStatus">ON</span></span>
+        <span class="toggle-label">Premium HD Mode: <span id="toggleStatus">ON</span></span>
     </div>
 
     <div class="speed-indicator">
         <div class="speed-meter">
             <div class="speed-needle" id="speedNeedle"></div>
-            <div class="speed-label">SPEED</div>
+            <div class="speed-label">QUALITY</div>
         </div>
     </div>
 
-    <main>
-        <section class="content-section">
-            <h2 class="delayed-element">Why Ads Make Us Faster</h2>
-            <p class="delayed-element">It's a scientific fact that our proprietary AdSpeed™ technology harnesses the power of advertisements to accelerate your browsing experience.</p>
-            <p class="delayed-element">While other websites slow down with ads, we've invented a revolutionary system where ads actually boost our performance!</p>
-        </section>
-
-        <div class="ad-container" id="adContainer">
-            <!-- Ads will be dynamically inserted here -->
+    <div class="game-container">
+        <div id="gameCanvas"></div>
+        <div id="gameUI">
+            <div id="healthBar"><div id="healthFill"></div></div>
+            <div id="controls">
+                <p>WASD: Move | Space: Action | ESC: Menu</p>
+            </div>
         </div>
+    </div>
 
-        <section class="content-section">
-            <h2 class="delayed-element">How It Works</h2>
-            <p class="delayed-element">Our engineers discovered that ads generate special "performance particles" that speed up website rendering. The more ads you see, the faster we can serve you content!</p>
-            <div class="delayed-element loading-demo" id="loadingDemo">
-                <div class="loading-bar"></div>
-                <p>Loading demonstration...</p>
-            </div>
-        </section>
-
-        <div class="ad-container" id="adContainer2">
-            <!-- More ads will be dynamically inserted here -->
-        </div>
-
-        <section class="content-section">
-            <h2 class="delayed-element">Testimonials</h2>
-            <div class="testimonial delayed-element">
-                <p>"I turned off ads and my computer almost exploded from the slowdown! Now I keep ads on all the time."</p>
-                <cite>- Definitely Real User</cite>
-            </div>
-            <div class="testimonial delayed-element">
-                <p>"Thanks to AdSpeed™, I now understand that ads are the backbone of the internet. My browsing has never been faster!"</p>
-                <cite>- Not Made Up Person</cite>
-            </div>
-        </section>
-    </main>
+    <div class="ad-overlay" id="adOverlay">
+        <!-- In-game ads will be placed here -->
+    </div>
 
     <footer>
-        <p>© 2023 AdSpeed™ - The technology that makes no sense but we're pretending it does</p>
-        <p class="small-print">Disclaimer: This is a parody. In the real world, ads typically slow down websites.</p>
+        <p>© 2023 AdventureLand™ - The technology that makes no sense but we're pretending it does</p>
+        <p class="small-print">Disclaimer: This is a parody. In the real world, ads don't enhance gameplay.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
-
