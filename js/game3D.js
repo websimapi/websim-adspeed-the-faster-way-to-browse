@@ -44,24 +44,26 @@ export function init3D(gameState, domElements) {
     // Set camera position
     gameState.camera.position.set(0, 5, 5);
     gameState.camera.lookAt(gameState.character3D.position);
-
-    // Start animation loop
-    animate3D(gameState);
 }
 
-export function animate3D(gameState) {
-    if (!gameState.is3DMode) return;
+export function animate3D(gameState, domElements) {
+    if (!gameState.is3DMode || !gameState.scene || !gameState.camera || !gameState.renderer) return;
     
-    requestAnimationFrame(() => animate3D(gameState));
+    requestAnimationFrame(() => animate3D(gameState, domElements));
     
     // Move character based on key input
-    moveCharacter3D(gameState);
+    if (gameState.character3D) {
+        moveCharacter3D(gameState);
+    }
     
     // Update camera to follow character
-    gameState.camera.position.x = gameState.character3D.position.x;
-    gameState.camera.position.z = gameState.character3D.position.z + 5;
-    gameState.camera.lookAt(gameState.character3D.position);
+    if (gameState.character3D && gameState.camera) {
+        gameState.camera.position.x = gameState.character3D.position.x;
+        gameState.camera.position.z = gameState.character3D.position.z + 5;
+        gameState.camera.lookAt(gameState.character3D.position);
+    }
     
+    // Render the scene
     gameState.renderer.render(gameState.scene, gameState.camera);
 }
 

@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set up keyboard controls
     initControls(gameState.keys);
     
+    // Start animation loop for 3D mode
+    if (gameState.is3DMode) {
+        animate3D(gameState, domElements);
+    }
+    
     function initGame(gameState, domElements) {
         if (gameState.is3DMode) {
             init3D(gameState, domElements);
@@ -41,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Switch game modes
             if (gameState.is3DMode) {
                 init3D(gameState, domElements);
+                animate3D(gameState, domElements);
             } else {
                 init2D(gameState, domElements);
             }

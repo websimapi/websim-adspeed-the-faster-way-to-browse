@@ -19,8 +19,8 @@ export function init2D(gameState, domElements) {
     requestAnimationFrame((timestamp) => animate2D(timestamp, gameState));
 }
 
-function animate2D(timestamp, gameState) {
-    if (gameState.is3DMode) return;
+export function animate2D(timestamp, gameState) {
+    if (gameState.is3DMode || !gameState.ctx || !gameState.canvas2D) return;
     
     requestAnimationFrame((newTimestamp) => animate2D(newTimestamp, gameState));
     
